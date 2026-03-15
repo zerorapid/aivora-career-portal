@@ -1,0 +1,8 @@
+{
+  "name": "Remix: AIVORA Career Portal",
+  "description": "AI-powered career portal for Osmania University students featuring a resume builder and mock interview simulations.",
+  "requestFramePermissions": [
+    "camera",
+    "microphone"
+  ]
+}

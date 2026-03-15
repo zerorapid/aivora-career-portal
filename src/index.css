@@ -1,0 +1,90 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+@theme {
+  --color-av-maroon-900: #4A0404;
+  --color-av-maroon-800: #6B0F0F;
+  --color-av-maroon-700: #8B1A1A;
+  --color-av-gold-500: #B28C32;
+  --color-av-gold-400: #C9A44D;
+  --color-av-success: #2D6A4F;
+  --color-av-warning: #D08E20;
+  --color-av-error: #A4161A;
+  
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  
+  --radius-av-s: 8px;
+  --radius-av-m: 16px;
+  --radius-av-l: 24px;
+  --radius-av-xl: 32px;
+
+  --shadow-av-sm: 0 2px 8px rgba(74, 4, 4, 0.04);
+  --shadow-av-md: 0 4px 16px rgba(74, 4, 4, 0.06);
+  --shadow-av-lg: 0 8px 24px rgba(74, 4, 4, 0.08);
+}
+
+@layer base {
+  body {
+    @apply bg-[#F8F7F4] text-[#111111] font-sans antialiased;
+  }
+}
+
+@layer components {
+  .av-card {
+    @apply bg-white rounded-av-l p-6 border border-[#EAEAEA] shadow-av-sm;
+  }
+  
+  .av-btn {
+    @apply inline-flex items-center justify-center gap-2 px-7 py-3 rounded-full font-semibold text-sm transition-all cursor-pointer border-[1.5px] border-transparent;
+  }
+  
+  .av-btn-primary {
+    @apply bg-av-maroon-900 text-white hover:bg-av-maroon-800;
+  }
+  
+  .av-btn-secondary {
+    @apply bg-white border-[#EAEAEA] text-[#111111] hover:bg-[#F1F0EC];
+  }
+
+  .av-badge {
+    @apply inline-block px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-[#F1F0EC] text-[#666666];
+  }
+}
+
+/* Custom Animations */
+@keyframes pulse-custom {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+.animate-pulse-custom {
+  animation: pulse-custom 2s infinite;
+}
+
+@keyframes wave {
+  0%, 100% { transform: scaleY(0.5); }
+  50% { transform: scaleY(1); }
+}
+
+.animate-wave {
+  animation: wave 1s ease-in-out infinite;
+}
+
+/* Custom Scrollbar */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 6px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: #EAEAEA;
+  border-radius: 10px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #D1D1D1;
+}
+
